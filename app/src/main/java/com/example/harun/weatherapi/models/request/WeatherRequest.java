@@ -1,4 +1,4 @@
-package com.example.harun.weatherapi.Models;
+package com.example.harun.weatherapi.models.request;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -6,7 +6,8 @@ import com.google.gson.annotations.SerializedName;
  * Created by Harun on 7.11.2017.
  */
 
-public class Post {
+public class WeatherRequest {
+
     @SerializedName("city")
     public String city;
 

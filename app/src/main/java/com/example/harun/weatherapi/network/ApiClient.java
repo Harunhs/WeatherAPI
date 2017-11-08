@@ -1,17 +1,12 @@
-package com.example.harun.weatherapi.Activities;
+package com.example.harun.weatherapi.network;
 
 import android.content.Context;
-import android.os.Looper;
-import android.widget.Toast;
-
-import com.example.harun.weatherapi.Interface.ApiService;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Handler;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -35,9 +30,6 @@ public class ApiClient {
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
     private static Gson gson = new GsonBuilder().create();
     private static GsonConverterFactory converterFactory = GsonConverterFactory.create(gson);
-
-
-
 
     private static Retrofit.Builder builder=
             new Retrofit.Builder()
