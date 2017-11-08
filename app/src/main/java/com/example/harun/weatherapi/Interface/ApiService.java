@@ -1,13 +1,20 @@
 package com.example.harun.weatherapi.Interface;
 
-import com.example.harun.weatherapi.Models.Current;
-import com.example.harun.weatherapi.Models.Example;
 
-import com.google.gson.annotations.SerializedName;
+
+import com.example.harun.weatherapi.Models.Post;
+import com.example.harun.weatherapi.Models.WeatherModel;
+
+import com.example.harun.weatherapi.Models.WeatherModelList;
+
+
+import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.Callback;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -17,6 +24,16 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    @GET("v1/current.json?key=31b38d6b8e2e48b38b8215100173010")
-    Call<Current> getWeather(@Query("q") String query);
+
+    @POST("/hava/current-weather/")
+    @FormUrlEncoded
+    Call<Post> savePost(@Field("city") String city);
+
+    @GET("hava/weathers")
+    Call<List<WeatherModelList>> getWeatherList(@Query("city_name") String city);
+
+    @GET("hava/weathers/{id}")
+    Call<WeatherModel> getWeather2(@Path("id") int id);
+
+
 }

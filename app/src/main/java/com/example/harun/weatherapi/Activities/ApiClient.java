@@ -28,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    private  static final String BASE_URL="http://api.apixu.com/";
+    private  static final String BASE_URL="http://138.197.185.149:8000/";
 
     private static Retrofit retrofit=null;
 
